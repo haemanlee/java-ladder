@@ -23,20 +23,10 @@ public class Users {
      Optional의 orElse() 메소드 활용해 구현한다.
      */
     User getUser(String name) {
-        Optional<User> optionalUser = users.stream()
+        Optional<User> optionalUser = Optional.of(users.stream()
                 .filter(user -> user.matchName(name))
-                .findFirst();
-
-        if(optionalUser.isPresent()){
-            return optionalUser.get();
-        }
-        return optionalUser.orElse(DEFAULT_USER);
-
-//        for (User user : users) {
-//            if (user.matchName(name)) {
-//                return user;
-//            }
-//        }
-//        return DEFAULT_USER;
+                .findFirst()
+                .orElse(DEFAULT_USER));
+        return optionalUser.get();
     }
 }
