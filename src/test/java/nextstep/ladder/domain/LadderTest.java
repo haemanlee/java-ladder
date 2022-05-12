@@ -16,7 +16,7 @@ class LadderTest {
         lines.add(new Line(List.of(true,true,true,true), 1));
         lines.add(new Line(List.of(false,false,true,true), 2));
         Ladder ladder = new Ladder(lines);
-        assertThat(ladder.getLines().get(0)).isEqualTo(new Line(List.of(true,true,true,true), 1));
-        assertThat(ladder.getLines().get(1)).isEqualTo(new Line(List.of(false,false,true,true), 2));
+        assertThat(ladder.getLineByPosition(1)).isEqualTo(new Line(List.of(true,true,true,true), 1));
+        assertThat(ladder.getLineByPosition(2)).isEqualTo(new Line(List.of(false,false,true,true), 2));
     }
 }

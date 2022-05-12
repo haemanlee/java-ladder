@@ -12,4 +12,8 @@ public class Ladder {
     public List<Line> getLines() {
         return Collections.unmodifiableList(lines);
     }
+
+    public Line getLineByPosition(int position) {
+        return lines.get(position - 1);
+    }
 }
