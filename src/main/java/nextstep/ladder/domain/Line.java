@@ -5,13 +5,28 @@ import java.util.List;
 import java.util.Objects;
 
 public class Line {
-    private final int position;
-    private List<Boolean> points = new ArrayList<>();
+    private int position;
+    private List<Boolean> points;
 
     // 라인의 좌표 값에 선이 있는지 유무를 판단하는 로직 추가
-    public Line(List<Boolean> points, int position) {
+    public Line(List<Boolean> points) {
         this.points = points;
+    }
+
+    public void assignPosition(int position) {
         this.position = position;
+    }
+
+    public List<Boolean> getPoints() {
+        return points;
+    }
+
+    public Boolean getPoint(int index){
+        return points.get(index);
+    }
+
+    public int size(){
+        return points.size();
     }
 
     public boolean isHaveLine(Line line){
@@ -38,4 +53,5 @@ public class Line {
     public int hashCode() {
         return Objects.hash(points);
     }
+
 }

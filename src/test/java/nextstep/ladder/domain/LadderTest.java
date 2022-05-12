@@ -13,10 +13,10 @@ class LadderTest {
     @Test
     void is_ladder_have_line(){
         ArrayList<Line> lines = new ArrayList<>();
-        lines.add(new Line(List.of(true,true,true,true), 1));
-        lines.add(new Line(List.of(false,false,true,true), 2));
+        lines.add(new Line(List.of(true,true,true,true)));
+        lines.add(new Line(List.of(false,false,true,true)));
         Ladder ladder = new Ladder(lines);
-        assertThat(ladder.getLineByPosition(1)).isEqualTo(new Line(List.of(true,true,true,true), 1));
-        assertThat(ladder.getLineByPosition(2)).isEqualTo(new Line(List.of(false,false,true,true), 2));
+        assertThat(ladder.getLineByPosition(1)).isEqualTo(new Line(List.of(true,true,true,true)));
+        assertThat(ladder.getLineByPosition(2)).isEqualTo(new Line(List.of(false,false,true,true)));
     }
 }
